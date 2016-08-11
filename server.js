@@ -27,8 +27,17 @@ app.get('/forecast/:apiKey/:coords', function(req, res) {
   request
     .get(`https://api.forecast.io/forecast/${ apiKey }/${ coords }`, function(err, response, body) {
       if (err) return res.send(err)
-      res.setHeader('Content-Type', 'application/json');
-      res.send(response.body);
+      if (response.statusCode !== 200) {
+        res.status(response.statusCode);
+        res.send({
+          statusCode: response.statusCode,
+          message: response.statusMessage,
+          success: false,
+        });
+      } else {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(response.body);
+      }
     })
 });
 
