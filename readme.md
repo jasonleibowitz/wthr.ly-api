@@ -4,6 +4,8 @@
 
 This is a very simple reverse proxy server to allow browser requests to the Forecast.io API. In order to utilize this server you should clone this repo, start it up, and route all API requests through [localhost:8080](http://localhost:8080).
 
+*Recommended Node Version:* 4.4.4 
+
 ## Instructions
 
 ```

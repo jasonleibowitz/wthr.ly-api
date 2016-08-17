@@ -13,5 +13,7 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engine": "node 4.4.4"
+
 }
